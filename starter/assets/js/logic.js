@@ -60,13 +60,58 @@ var time =74;
 
  // penultimate question 
 
+ function nextCorrectAnswer () {
+    score +=15;
+    document.getElementById ("questions").innerHTML =
+    `<div class= "quiz">
+    <h2> Inside what HTML element do we insert Javascript  </h2>
+    <button onclick="penultimateInorrectAnswer()" > <JavaScript> </button>
+    <button onclick="penultimateIncorrectAnswer()" > <js> /button>
+    <button onclick="penultimateCorrectAnswer()" > <script> </button>
+    </div> `;
+
+ }
+
+
+ function nextIncorrectAnswer () {
+    time -=15;
+    document.getElementById ("questions").innerHTML =
+    `<div class= "quiz">
+    <h2> Inside what HTML element do we insert Javascript  </h2>
+    <button onclick="penultimateInorrectAnswer()" > <JavaScript> </button>
+    <button onclick="penultimateIncorrectAnswer()" > <js> /button>
+    <button onclick="penultimateCorrectAnswer()" > <script> </button>
+    </div> `;
+
 
 
 
 // last question 
 
+function penultimateCorrectAnswer () {
+    score +=15;
+    document.getElementById ("questions").innerHTML =
+    `<div class= "quiz">
+    <h2>  How do we start a while loop </h2>
+    <button onclick="lastCorrectAnswer()" > while (i<=55) </button>
+    <button onclick="lasIncorrectAnswer()" > while i =1 to 55</button>
+    <button onclick="lastIncorrectAnswer()" > while (i <= 55, i++) </button>
+    </div> `;
 
 
+    function penultimateIncorrectAnswer () {
+        time -=15;
+        document.getElementById ("questions").innerHTML =
+        `<div class= "quiz">
+        <h2>  How do we start a while loop </h2>
+        <button onclick="lastCorrectAnswer()" > while (i<=55)  </button>
+        <button onclick="lastIncorrectAnswer()" > while i =1 to 55</button>
+        <button onclick="lastIncorrectAnswer()" > while (i <= 55, i++)  </button>
+        </div> `;
+
+    // last answer store , local storage 
+
+    
 //end game when time runs out
 
 
