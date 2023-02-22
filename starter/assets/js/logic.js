@@ -146,6 +146,18 @@ function lastCorrectAnswer () {
 }
 //end game when time runs out
 function timeOut() {
+    localStorage.setItem("highScore", score);
+    var highScore =localStorage.getItem("highScore");
+    console.log(`High score: ${highScore}`);
+    document.getElementById("questions").innerHTML=
+    `<div id="end-screen">
+      <h2> Time's up. All done! </h2>
+      <p> Your final score is <span id="final-score"> ${highScore}</span>.
+      </p>
+      <p> Enter your initials : <input type="text" id="initials" max="4"/>
+      <button id="submit" onclick= "submitScore()"> Submit </button>
+      </p>
+      </div> `;
 
 }
 
