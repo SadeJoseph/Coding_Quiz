@@ -1,10 +1,10 @@
-document.getElementById("start").addEventListener("click",startQuiz)
+document.getElementById("start").addEventListener("click",startQuiz);
 var reveal =document.getElementById("questions");
 var count = document.getElementById("time");
 //global variables 
-var timer ="";
+var timer = "";
 var score= 0;
-var time = 74;
+var time = 75;
 
 
 
@@ -23,12 +23,12 @@ var time = 74;
 
 
   timer=setInterval (function () {
-    counting.innerText = time ;
+    counting.innerText = time;
     console.log(time);
     time--;
     
 
-    if (time<0) {
+    if (time < 0 ) {
         clearTimeout(timer);
         timeOut();
     }
@@ -67,9 +67,9 @@ var time = 74;
     document.getElementById ("questions").innerHTML =
     `<div class= "quiz">
     <h2> Inside what HTML element do we insert Javascript  </h2>
-    <button onclick="penultimateIncorrectAnswer()" > <JavaScript> </button>
-    <button onclick="penultimateIncorrectAnswer()" > <js> /button>
-    <button onclick="penultimateCorrectAnswer()" > <script> </button>
+    <button onclick="penultimateIncorrectAnswer()" > between JavaScript tags </button>
+    <button onclick="penultimateIncorrectAnswer()" > between js tags  </button>
+    <button onclick="penultimateCorrectAnswer()" > between script tags </button>
     </div> `;
 
  }
@@ -120,7 +120,7 @@ function lastCorrectAnswer () {
     score +=15;
     clearInterval(timer);
     localStorage.setItem("highScore", score );
-    var highScore = localStorage.getItem ("highscore");
+    var highScore = localStorage.getItem ("highScore");
     console.log(`High score :${highScore}`);
     document.getElementById ("questions").innerHTML = 
     `<div id= "end-screen">
@@ -133,7 +133,7 @@ function lastCorrectAnswer () {
 
 
 function lastIncorrectAnswer () {
-    score -=15;
+    time -=15;
     clearInterval(timer);
     localStorage.setItem("highScore", score );
     var highScore = localStorage.getItem ("highscore");
@@ -165,7 +165,7 @@ function timeOut() {
 
 // final score 
 function submitScore (name) {
-    var userInitials=document.getElementById("name").value;
+    var userInitials = document.getElementById("name").value;
     localStorage.setItem("name", userInitials);
     window.location= "highscores.html";
 
