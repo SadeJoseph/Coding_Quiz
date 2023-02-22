@@ -80,9 +80,9 @@ var time =74;
     document.getElementById ("questions").innerHTML =
     `<div class= "quiz">
     <h2> Inside what HTML element do we insert Javascript  </h2>
-    <button onclick="penultimateIncorrectAnswer()" > <JavaScript> </button>
-    <button onclick="penultimateIncorrectAnswer()" > <js> /button>
-    <button onclick="penultimateCorrectAnswer()" > <script> </button>
+    <button onclick="penultimateIncorrectAnswer()" > between JavaScript tags </button>
+    <button onclick="penultimateIncorrectAnswer()" > between js tags </button>
+    <button onclick="penultimateCorrectAnswer()" >  between script tags </button>
     </div> `;
 
  }
@@ -168,7 +168,7 @@ function submitScore (name) {
     var userInitials=document.getElementById("name").value;
     localStorage.setItem("name", userInitials);
     window.location= "highscores.html";
-    
+
 }
 
 
