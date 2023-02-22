@@ -83,7 +83,7 @@ var time =74;
     <button onclick="penultimateCorrectAnswer()" > <script> </button>
     </div> `;
 
-
+ }
 
 
 // last question 
@@ -98,7 +98,7 @@ function penultimateCorrectAnswer () {
     <button onclick="lastIncorrectAnswer()" > while (i <= 55, i++) </button>
     </div> `;
 
-
+}
     function penultimateIncorrectAnswer () {
         time -=15;
         document.getElementById ("questions").innerHTML =
@@ -109,9 +109,25 @@ function penultimateCorrectAnswer () {
         <button onclick="lastIncorrectAnswer()" > while (i <= 55, i++)  </button>
         </div> `;
 
-    // last answer store , local storage 
+    }
 
-    
+
+
+    // last answer store , local storage 
+function lastCorrectAnswer () {
+    score +=15;
+    clearInterval(timer);
+    localStorage.setItem("highScore", score );
+    var highScore = localStorage.getItem ("highscore");
+    console.log(`High score :${highScore}`);
+    document.getElementById ("questions").innerHTML = 
+    `<div id= "end-screen">
+    <h2>The End. All done!</h2>
+    <p>Yor final score is <span id="final-score">{highScore}</span></p>
+    <p>Enter your Initials: <input type="text" id="name" max="4" />
+    <button id="submit" onclick="submitScore()">Submit</button></p>
+}
+
 //end game when time runs out
 
 
