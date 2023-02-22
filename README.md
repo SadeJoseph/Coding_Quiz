@@ -6,7 +6,7 @@ Our challenge was to produce a quiz app that has a timer and tracks and stores u
 
 ## Screenshot 
 
-![screenshot](./screenshot.png)
+![screenshot]()
 
   
 ## Live Application
