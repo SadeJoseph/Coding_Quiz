@@ -65,7 +65,7 @@ var time =74;
     document.getElementById ("questions").innerHTML =
     `<div class= "quiz">
     <h2> Inside what HTML element do we insert Javascript  </h2>
-    <button onclick="penultimateInorrectAnswer()" > <JavaScript> </button>
+    <button onclick="penultimateIncorrectAnswer()" > <JavaScript> </button>
     <button onclick="penultimateIncorrectAnswer()" > <js> /button>
     <button onclick="penultimateCorrectAnswer()" > <script> </button>
     </div> `;
@@ -78,7 +78,7 @@ var time =74;
     document.getElementById ("questions").innerHTML =
     `<div class= "quiz">
     <h2> Inside what HTML element do we insert Javascript  </h2>
-    <button onclick="penultimateInorrectAnswer()" > <JavaScript> </button>
+    <button onclick="penultimateIncorrectAnswer()" > <JavaScript> </button>
     <button onclick="penultimateIncorrectAnswer()" > <js> /button>
     <button onclick="penultimateCorrectAnswer()" > <script> </button>
     </div> `;
@@ -125,11 +125,29 @@ function lastCorrectAnswer () {
     <h2>The End. All done!</h2>
     <p>Yor final score is <span id="final-score">{highScore}</span></p>
     <p>Enter your Initials: <input type="text" id="name" max="4" />
-    <button id="submit" onclick="submitScore()">Submit</button></p>
+    <button id="submit" onclick="submitScore()">Submit</button></p> 
+    </div> `;
 }
 
-//end game when time runs out
 
+function lastCorrectAnswer () {
+    score -=15;
+    clearInterval(timer);
+    localStorage.setItem("highScore", score );
+    var highScore = localStorage.getItem ("highscore");
+    console.log(`High score :${highScore}`);
+    document.getElementById ("questions").innerHTML = 
+    `<div id= "end-screen">
+    <h2>The End. All done!</h2>
+    <p>Yor final score is <span id="final-score">{highScore}</span></p>
+    <p>Enter your Initials: <input type="text" id="name" max="4" />
+    <button id="submit" onclick="submitScore()">Submit</button></p>
+    </div> `; 
+}
+//end game when time runs out
+function timeOut() {
+
+}
 
 // final score 
 
