@@ -22,7 +22,7 @@ var time =74;
   reveal.classList.remove("hide");
 
 
-  timer=setInterval (function () [
+  timer=setInterval (function () {
     counting.innerText =time ;
     console.log(time);
     time--;
@@ -32,10 +32,11 @@ var time =74;
         clearTimeout(timer);
         outOfTime();
     }
-}, 1000;
+}, 1000);
+ }
 
 //correct nanswers result in score +15 score - add html to dom
- function correctAnswer (){
+ function correctAnswer () {
     score +=15;
     document.getElementById ("questions").innerHTML =
     `<div class= "quiz">
@@ -45,6 +46,7 @@ var time =74;
     <button onclick="nextIncorrectAnswer()" > var=fooditem </button>
     </div> `;
  }
+
  //incorrect answers = decrese in time by 15 seconds
  function incorrectAnswer () {
     time-=15;
@@ -154,7 +156,7 @@ function timeOut() {
       <h2> Time's up. All done! </h2>
       <p> Your final score is <span id="final-score"> ${highScore}</span>.
       </p>
-      <p> Enter your initials : <input type="text" id="initials" max="4"/>
+      <p> Enter your initials : <input type="text" id="name" max="4"/>
       <button id="submit" onclick= "submitScore()"> Submit </button>
       </p>
       </div> `;
@@ -162,6 +164,14 @@ function timeOut() {
 }
 
 // final score 
+function submitScore (name) {
+    var userInitials=document.getElementById("name").value;
+    localStorage.setItem("name", userInitials);
+    window.location= "highscores.html";
+    
+}
+
+
 
 
  // quesstions

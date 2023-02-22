@@ -7,4 +7,10 @@ document.getElementById("highscores").innerHTML =
  </ol>
  `;
 
+
+
  
+ function clear() {
+    document.getElementById("highscores").innerHTML ="";
+    localStorage.clear();
+ }
