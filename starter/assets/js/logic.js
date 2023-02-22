@@ -1,12 +1,12 @@
+document.getElementById("start").addEventListener("click",startQuiz)
+var reveal =document.getElementById("questions");
+var count = document.getElementById("time");
 //global variables 
-var timer ='';
-var score=0;
-var time =74;
+var timer ="";
+var score= 0;
+var time = 74;
 
-// reveal start of quiz .referencd variabels
- document.getElementById("start").addEventListener("click",startQuiz)
- var reveal =document.getElementById("questions");
- var count = document.getElementById("time");
+
 
 //startQuiz first question
  function startQuiz() {
@@ -23,14 +23,14 @@ var time =74;
 
 
   timer=setInterval (function () {
-    counting.innerText =time ;
+    counting.innerText = time ;
     console.log(time);
     time--;
     
 
     if (time<0) {
         clearTimeout(timer);
-        outOfTime();
+        timeOut();
     }
 }, 1000);
  }
@@ -132,7 +132,7 @@ function lastCorrectAnswer () {
 }
 
 
-function lastCorrectAnswer () {
+function lastIncorrectAnswer () {
     score -=15;
     clearInterval(timer);
     localStorage.setItem("highScore", score );
@@ -141,7 +141,7 @@ function lastCorrectAnswer () {
     document.getElementById ("questions").innerHTML = 
     `<div id= "end-screen">
     <h2>The End. All done!</h2>
-    <p>Yor final score is <span id="final-score">{highScore}</span></p>
+    <p>Yor final score is <span id="final-score">${highScore}</span></p>
     <p>Enter your Initials: <input type="text" id="name" max="4" />
     <button id="submit" onclick="submitScore()">Submit</button></p>
     </div> `; 
@@ -154,8 +154,8 @@ function timeOut() {
     document.getElementById("questions").innerHTML=
     `<div id="end-screen">
       <h2> Time's up. All done! </h2>
-      <p> Your final score is <span id="final-score"> ${highScore}</span>.
-      </p>
+      <p> Your final score is <span id="final-score">${highScore}</span>.</p>
+
       <p> Enter your initials : <input type="text" id="name" max="4"/>
       <button id="submit" onclick= "submitScore()"> Submit </button>
       </p>
